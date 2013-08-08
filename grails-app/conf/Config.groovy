@@ -11,7 +11,7 @@
 // }
 
 
-grails.project.groupId = 'co.freeside' // change this to alter the default package name and Maven publishing destination
+grails.project.groupId = ${appName} // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
 grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
@@ -67,7 +67,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://grails-twitter-bootstrap.cloudfoundry.com"
+        grails.serverURL = "http://your-test-domain"
     }
 }
 
@@ -93,23 +93,5 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
-// Added by the Joda-Time plugin:
-grails.gorm.default.mapping = {
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentDateMidnight, class: org.joda.time.DateMidnight
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentDateTime, class: org.joda.time.DateTime
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentDateTimeZoneAsString, class: org.joda.time.DateTimeZone
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentDurationAsString, class: org.joda.time.Duration
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentInstantAsMillisLong, class: org.joda.time.Instant
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentInterval, class: org.joda.time.Interval
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentLocalDate, class: org.joda.time.LocalDate
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime, class: org.joda.time.LocalDateTime
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentLocalTime, class: org.joda.time.LocalTime
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentPeriodAsString, class: org.joda.time.Period
-	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentYears, class: org.joda.time.Years
-}
-
-jodatime.format.html5 = true
 
 grails.plugins.twitterbootstrap.fixtaglib = true
-
-grails.plugin.cloudfoundry.appname = 'grails-twitter-bootstrap'

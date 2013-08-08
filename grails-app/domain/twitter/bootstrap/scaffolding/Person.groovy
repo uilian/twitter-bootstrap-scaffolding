@@ -1,14 +1,13 @@
 package twitter.bootstrap.scaffolding
 import twitter.bootstrap.scaffolding.Address
 
-import org.joda.time.LocalDate
-
 class Person {
 	
 	String firstName
 	String lastName
 	String email
-	LocalDate dateOfBirth
+
+	Date dateOfBirth
 	Address address
 	
 	static embedded = ["address"]
